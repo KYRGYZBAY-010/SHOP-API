@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
-from .models import Project
-from .serializers import ProjectDeteilSerializers, ProjectSerializers
+from .models import Project, Clients
+from .serializers import ProjectDeteilSerializers, ProjectSerializers, ClientsSerializers
 
 
 class ProjectView(GenericAPIView):
@@ -25,3 +25,20 @@ class ProjectDeteilView(GenericAPIView):
 
         return Response(serializer.data)
 
+class ClientsView(GenericAPIView):
+    serlializer_class = ClientsSerializers
+
+    def get(self, request):
+        client = Clients.objects.all()
+        serializer = ClientsSerializers(client, many = True)
+        return Response(serializer.data)
+
+
+class Search(GenericAPIView):
+    serializer_class = ProjectSerializers
+
+
+    def get(self, request, name):
+        search = Project.objects.filter(title__icontains = name)
+        serializer = ProjectSerializers(search, many = True)
+        return Response(serializer.data)
