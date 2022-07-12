@@ -1,6 +1,5 @@
-from unittest.util import _MAX_LENGTH
 from rest_framework import serializers
-from .models import Project, Clients, Search
+from .models import Comment, Project, Clients, Comment, Laiks
 
 
 class ProjectSerializers(serializers.ModelSerializer):
@@ -20,3 +19,14 @@ class ClientsSerializers(serializers.ModelSerializer):
     class Meta:
         model = Clients
         fields = ('title', 'icon', 'url')
+
+class CommentSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields =  ('txt',)
+
+
+class LaikSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Laiks
+        fields = ('numer',)

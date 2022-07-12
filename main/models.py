@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 
@@ -36,5 +37,21 @@ class Clients(models.Model):
         verbose_name_plural = 'Наши клиенты'
     
 
-class Search(models.Model):
-    name = models.CharField(max_length=30) 
+class Comment(models.Model):
+    txt = models.TextField('Коментарии', max_length=300)
+
+
+    def __str__(self):
+        return self.txt
+
+    class Meta:
+        verbose_name = 'Коментарии'
+        verbose_name_plural = 'Коментарии'
+
+
+class Laiks(models.Model):
+    numer = models.DecimalField(max_digits=2, decimal_places=1, validators=[MinValueValidator(0), MaxValueValidator(5)], default=0)
+
+    class Meta:
+        verbose_name = 'Оценка'
+        verbose_name_plural = 'Оценка'
