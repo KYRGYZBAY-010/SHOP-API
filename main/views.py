@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
-from .models import Project, Clients, Comment
+from .models import Project, Clients
 from .serializers import ProjectDeteilSerializers, ProjectSerializers, ClientsSerializers, CommentSerializers, LaikSerializers
 
 

@@ -26,7 +26,7 @@ class Project(models.Model):
 class Clients(models.Model):
     title = models.CharField('Наши клиенты', max_length=50)
     icon = models.ImageField(null = True, blank = True)
-    url = models.URLField(null = True)
+    url = models.URLField('URL Аддрес', null = True)
     date = models.DateTimeField('Дата и время', null = True)
 
     def __str__(self):
