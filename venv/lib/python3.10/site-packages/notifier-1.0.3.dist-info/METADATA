@@ -1,0 +1,43 @@
+Metadata-Version: 2.0
+Name: notifier
+Version: 1.0.3
+Summary: Simple in-memory pub-sub.
+Home-page: https://github.com/harlowja/notifier
+Author: OpenStack
+Author-email: openstack-dev@lists.openstack.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Software Development :: Libraries
+Requires-Dist: pbr (>=1.6)
+Requires-Dist: six (>=1.9.0)
+Requires-Dist: futurist
+Requires-Dist: oslo.utils (>=2.0.0)
+Requires-Dist: frozendict (>=0.4)
+Requires-Dist: weakrefmethod (>=1.0.2); (python_version=='2.7')
+
+========
+Notifier
+========
+
+.. image:: https://travis-ci.org/harlowja/notifier.png?branch=master
+   :target: https://travis-ci.org/harlowja/notifier
+
+In memory pub/sub [1]_
+
+* Free software: Apache license
+
+.. [1] See: `publish–subscribe pattern <https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern>`_
+
+
+
